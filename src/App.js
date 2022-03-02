@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Main from "../src/components/Main"
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <h1>App con Ruteo</h1>
         <Routes>
-          <Route path="/" element="{<Home/>}" />
+          <Route path="/" element={<Main />} />
 
           <Route path="/tv" element="{<Tv/>}" />
           <Route
@@ -28,12 +27,14 @@ const App = () => {
           <Route path="/tv/:idtv/reparto" element="{<TvReparto/>}" />
           <Route path="/tv/:idtv/similares" element="{<TvSimilares/>}" />
 
-
           <Route
             path="/search/multi/:nameMovieTv/page/:nroPage"
             element="{<Busqueda/>}"
           />
-          
+          <Route
+            path="/search/:nameMovieTv"
+            element={<Main/>}
+          />
 
           <Route path="/movie" element="{<Movie/>}" />
           <Route
